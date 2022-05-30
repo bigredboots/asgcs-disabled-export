@@ -1,0 +1,45 @@
+$green-color: #54b948;
+$yellow-color: #fdbb31;
+$orange-color: #f68a33;
+$red-color: #e31b23;
+$blue-color: #009ddc;
+$blue-hover-color: #00b6ff;
+$grey-color: #29272a;
+$tertiary-color-a: #009a8c;
+$tertiary-color-b: #065aa3;
+$tertiary-color-c: #02849e;
+
+$table-hover: #0f1f26;
+
+$grey-lightest: #dcdcdc;
+$grey-lighter: #ccc;
+$grey-light: #999;
+$grey-darker: #404040;
+$grey-darkest: #151515;
+
+$translucent-grey-1: rgba(100, 100, 100, 0.7);
+$translucent-grey-2: rgba(100, 100, 100, 0.88);
+
+$overlayer: rgba(25, 25, 25, 0.7);
+
+$white: #fff;
+$black: #000;
+
+/*these are only used in conjunction with the standard grey colors above for specific needs, 
+  e.g. zebra-striping, hover elements, etc.  Not to be used for major styling elements
+  */
+$grey-darkest-b: #252525;
+$grey-light-b: #616161;
+$blue-color-hover: #0f1f26;
+
+$smallest-font: 12px;
+$smaller-font: 13px;
+$small-font: 14px;
+$base-font: 16px;
+$large-font: 18px;
+$larger-font: 24px;
+$largest-font: 30px;
+
+$default-transition: 0.3s ease-in all;
+$fast-transition: 0.1s ease-out all;
+$cubic-transition: cubic-bezier(0.26, 0.73, 0.86, 1.16);

@@ -1,0 +1,96 @@
+<div class="page-container">
+  <app-grid-container>
+    <div gridCell class="card card-body">
+      <div class="card-title left">
+        <div
+          class="custom-reports card-title-text"
+          [routerLink]="['/outboundReports']"
+          [routerLinkActive]="['is-active']"
+        >
+          Report List
+        </div>
+        <div class="my-reports card-title-text">My Reports</div>
+      </div>
+      <div class="menu-list">
+        <ul>
+          <li>
+            <a
+              [routerLink]="['/outboundReports']"
+              [routerLinkActive]="['is-active']"
+              >OUTBOUND FULL REPORT</a
+            >
+          </li>
+          <li>
+            <a
+              [routerLink]="['/outboundReportsWavechart']"
+              [routerLinkActive]="['is-active']"
+              >Outbound Activity</a
+            >
+          </li>
+          <li>
+            <a
+              [routerLink]="['/outboundReportsLocations']"
+              [routerLinkActive]="['is-active']"
+              >Outbound Locations</a
+            >
+          </li>
+          <li class="active">
+            <a>Outbound Profile</a>
+          </li>
+          <li>
+            <a
+              [routerLink]="['/outboundReportsTotaldemand']"
+              [routerLinkActive]="['is-active']"
+              >Outbound Status</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div gridCell class="card card-body">
+      <div class="card-title">
+        <div class="left-side-content">
+          <div class="card-title-text">Outbound Profile</div>
+          <div class="total-legend">
+            <div class="firm">Firm</div>
+            <div class="forecast">Forecast</div>
+            <div class="buffer">Buffer</div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="https://stackblitz.com/files/asgcs/github/bigredboots-arrow/angular-component-library-example-part-3-progress-45zjbr/master/src/assets/images/stackbarchart-sm.png"
+        style="height: 235px"
+      />
+    </div>
+    <div gridCell class="card card-body">
+    <div class="card-title">
+      <div class="card-title-text">Summary</div>
+    </div>
+    <div class="card-element four-totals">
+      <div class="lines">
+        <div class="title">Distinct Bill TOs</div>
+        <div class="numbers">9,999</div>
+      </div>
+      <div class="lines">
+        <div class="title">Order Sales</div>
+        <div class="numbers">$ 99.9M</div>
+      </div>
+      <div class="lines">
+        <div class="title">Distinct Ship TOs</div>
+        <div class="numbers">99</div>
+      </div>
+      <div class="lines">
+        <div class="title">Orders Shipped</div>
+        <div class="numbers">999</div>
+      </div>
+    </div>
+  </div>
+    <div gridCell gcColSpan="3" class="card card-body">
+      <div class="card-title">
+        <div class="card-title-text">Outbound Profile Details</div>
+      </div>
+      <h4>GRID</h4>
+    </div>
+  </app-grid-container>
+</div>

@@ -1,0 +1,54 @@
+@import '../../../scss/global';
+
+.breadcrumb {
+  font-size: $larger-font;
+  color: $grey-lighter;
+  opacity: 1;
+  max-width: 100%;
+  text-transform: capitalize;
+  left: 0;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  max-height: 50px;
+  letter-spacing: 1px;
+  border-radius: unset;
+  background-color: unset;
+  margin: unset;
+  padding: unset;
+
+  .breadcrumb-item {
+    display: inline-block;
+    font-size: $larger-font;
+  }
+  .company-title {
+    font-size: $largest-font;
+    display: inline;
+  }
+  span::after {
+    content: '';
+    border-left: 2px solid $grey-lighter;
+    border-bottom: 2px solid $grey-lighter;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    transform: rotate(-135deg);
+    margin: 0px 10px;
+    top: -2px;
+    position: relative;
+  }
+  span:empty::after {
+    content: none;
+  }
+  span::first-of-type {
+    margin-left: 10px;
+  }
+  span::first-of-type:before {
+    content: none;
+  }
+}
+.breadcrumb-label {
+  text-decoration: none;
+  list-style: none;
+  display: inline-flex;
+}

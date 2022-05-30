@@ -1,0 +1,56 @@
+@import '../../../scss/global';
+
+/*logo block */
+
+.home-logo {
+  background: $black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 35px;
+  max-width: 300px;
+  transition: $default-transition;
+
+  img {
+    height: 32px;
+  }
+}
+::ng-deep .company-logo {
+  overflow: hidden;
+  background-repeat: no-repeat;
+  height: 30px;
+  opacity: 1;
+  background-size: contain;
+  background-position-x: right;
+  background-position-y: bottom;
+  transition: $default-transition;
+}
+.hamburger {
+  background: $blue-color;
+  width: 31px;
+  height: 29px;
+  cursor: pointer;
+  border-radius: 100%;
+  position: relative;
+  right: 0px;
+  top: 10px;
+  
+  &:hover {
+    background: $blue-hover-color;
+    transition: $fast-transition;
+  }
+
+  span {
+    left: 12px;
+    top: 9px;
+    height: 10px;
+    width: 10px;
+    background: transparent;
+    position: absolute;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(45deg);
+    transition: $default-transition;
+  }
+}

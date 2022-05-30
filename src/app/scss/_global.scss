@@ -1,0 +1,33 @@
+@import './variables';
+
+button {
+  background: $black;
+  color: $white;
+  border-radius: 5px;
+  border: 1px solid $black;
+  font-size: $small-font;
+  padding: 3px 8px;
+  cursor: pointer;
+  transition: $default-transition;
+
+  &.secondary {
+    background: $white;
+    color: $blue-color;
+    font-weight: 400;
+    border-color: $white;
+    &:hover {
+      border-color: $blue-hover-color;
+    }
+  }
+  &.blue {
+    background: $blue-color;
+    color: $white;
+    border-width: 1px;
+    border-color: $blue-color;
+
+    &:hover {
+      background: $blue-hover-color;
+      border-width: 1px;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+
+.modal-window {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  position: absolute;
+  width: 300px;
+  background: #29272a;
+  padding: 10px;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 10px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: 1.3s cubic-bezier(0.1, 1.1, 0.23, 1.01) all;
+  opacity: 0;
+}
+.idle.modal-window {
+  z-index: 10;
+}
+
+.modal-window .countdown {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+.modal-window .login-modal {
+  text-align: left;
+}
+.modal-window .login-modal input {
+  width: calc(100% - 14px);
+  border-radius: 5px;
+  border: 0px;
+  padding: 4px 7px;
+  font-size: 16px;
+  margin: 0px;
+}
+.modal-window .login-modal label {
+  font-size: 14px;
+  margin: 5px 0px 0px;
+}
+.modal-window .login-modal .login-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin-top: 20px;
+  gap: 10px;
+}
+.filter-title {
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+

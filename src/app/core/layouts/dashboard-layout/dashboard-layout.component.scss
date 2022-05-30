@@ -1,0 +1,302 @@
+@import '../../../scss/variables';
+
+.container {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  max-width: unset;
+  padding: 0px;
+  margin: 0px;
+
+  .left-column {
+    top: 0;
+    transition: $default-transition;
+
+    &.open {
+      flex: 0 0 220px;
+      padding: 35px 15px 35px 35px;
+      transition: 0.4s all $cubic-transition;
+    }
+    &.collapse {
+      flex: 0 0 55px;
+      padding: 35px 0px 35px 20px;
+      transition: 0.4s all $cubic-transition;
+
+      .main-navigation ul {
+        width: 45px;
+      }
+    }
+    &.close {
+      flex: 0 0 0px;
+      transition: $default-transition;
+    }
+    &.mobile {
+      position: absolute;
+      width: 290px;
+      background: $grey-color;
+      height: 100vh;
+      padding: 10px;
+      transition: $default-transition;
+      z-index: 2;
+      left: -300px;
+    }
+    &.mobile-open {
+      position: absolute;
+      width: 290px;
+      background: $grey-color;
+      height: 100vh;
+      padding: 10px;
+      transition: 0.4s all $cubic-transition;
+      z-index: 2;
+      left: 0px;
+    }
+  }
+
+  .right-column {
+    width: 100%;
+    margin-left: 20px;
+    height: 100vh;
+  }
+}
+.header {
+  height: 190px;
+  transition: $default-transition;
+}
+.main-content {
+  margin: 0px 25px 0px 0px;
+  overflow-y: auto;
+  padding-right: 10px;
+  height: calc(100vh - 190px);
+  transition: $default-transition;
+}
+
+::ng-deep {
+  .sidebar-active .overlayer,
+  .excel-modal-open .overlayer,
+  .filter-expanded .overlayer {
+    display: block !important;
+    opacity: 0;
+    transition: $default-transition;
+  }
+
+  /* collapsed nav-menu */
+  .left-side-content {
+    display: flex;
+
+    .filter-items {
+      display: flex;
+    }
+
+    .filter-item {
+      white-space: nowrap;
+      align-items: center;
+      gap: 5px;
+      margin-left: 10px;
+    }
+
+    //Temporary theme for Kendo UI drop downs
+    .k-input {
+      font-size: 12px !important;
+
+      span:before {
+        content: ': ';
+      }
+    }
+  }
+  .left-column.collapse {
+    .hamburger span {
+      transform: rotate(-135deg) !important;
+      left: 8px !important;
+    }
+    #main-sidebar {
+      width: 0px;
+    }
+    .home-logo {
+      padding: 10px 0px;
+    }
+    app-navigation-bar {
+      justify-content: start;
+    }
+    .home-logo .company-logo {
+      min-width: 0px !important;
+      max-width: 0px !important;
+    }
+
+    .main-navigation {
+      > ul > li span::after {
+        display: none !important;
+      }
+      ul li {
+        .navigation-links {
+          position: absolute;
+          z-index: 1;
+          background: $blue-color;
+          margin-left: 40px;
+          padding: 5px 0px;
+          margin-top: 0px !important;
+          max-width: 0px;
+          overflow: hidden;
+          transition: $default-transition;
+          white-space: nowrap;
+          color: $white;
+        }
+        &:hover .navigation-links {
+          max-width: 300px;
+          padding: 5px 10px;
+          border-radius: 10px;
+        }
+        &:hover::after {
+          width: 0;
+          height: 0;
+          border-top: 6px solid transparent;
+          border-bottom: 6px solid transparent;
+          border-right: 6px solid $blue-color;
+          display: inline-block;
+          content: '';
+          left: 34px;
+          position: absolute;
+          top: 10px;
+        }
+        &:hover .navigation-links ul {
+          max-height: 80px;
+        }
+        &:hover .navigation-links a,
+        &:hover .navigation-links ul a {
+          color: $white;
+          display: flex;
+          align-items: center;
+        }
+      }
+      ul ul {
+        margin: 0px;
+      }
+      ul ul li:hover::after {
+        content: none;
+      }
+    }
+  }
+  .left-column.open .home-logo .company-logo {
+    width: calc(100% - 35px) !important;
+  }
+  .left-column.mobile-open .home-logo .company-logo {
+    min-width: 110px !important;
+    max-width: 110px !important;
+  }
+
+  .user-block {
+    display: flex;
+  }
+  .avatar {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    display: block;
+    cursor: pointer;
+  }
+  .name {
+    grid-row: 1;
+    grid-column: 2;
+    font-size: 14px;
+    font-weight: 500;
+    min-width: 80px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 100px;
+  }
+}
+.reportscreen .header {
+  height: 120px;
+  transition: 0.3s ease-in all;
+}
+.reportscreen .main-content {
+  height: calc(100vh - 120px);
+  transition: 0.3s ease-in all;
+}
+
+//for responsive screen and open menu
+@media only screen and (min-width: 769px) and (max-width: 1200px) {
+  ::ng-deep .header.open {
+    .name {
+      display: none;
+    }
+    .top-navigation-block {
+      .site-search {
+        margin-right: 15px;
+        width: 30px;
+        height: 30px;
+
+        &::before {
+          left: 22px;
+          top: 17px;
+        }
+        &::after {
+          height: 20px;
+          width: 20px;
+        }
+      }
+      .notifications .icon {
+        margin-right: 15px !important;
+        width: 30px !important;
+        background-size: 30px 30px !important;
+        background-position: 0px 0px !important;
+
+        &::after {
+          right: 0px !important;
+          left: initial !important;
+        }
+      }
+      .notifications #toggle-notifications:checked ~ .icon {
+        background-size: 0px 0px !important;
+
+        &::after {
+          right: 10px !important;
+        }
+      }
+      .user-block .avatar {
+        width: 30px !important;
+      }
+    }
+  }
+  ::ng-deep .main-content.open {
+    .left-side-content .filter-items {
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 10px;
+
+      .filter-item {
+        margin: 5px 0px;
+      }
+    }
+    [gridCell] .left-side-content .total-legend {
+      display: block;
+
+      div {
+        margin: 5px 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    height: 120px;
+    transition: $default-transition;
+  }
+  .main-content {
+    height: calc(100vh - 120px);
+    transition: $default-transition;
+  }
+
+  ::ng-deep {
+    .left-side-content .filter-items {
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 10px;
+
+      .filter-item {
+        margin: 5px 0px;
+      }
+    }
+  }
+}

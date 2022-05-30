@@ -1,0 +1,74 @@
+<div class="page-container">
+  <app-grid-container>
+    <div gridCell gcColSpan="2" class="card card-body">
+      <div class="card-title left">
+        <div class="custom-reports card-title-text">Report List</div>
+        <div class="my-reports card-title-text">My Reports</div>
+      </div>
+      <div class="menu-list">
+        <ul>
+          <li class="active">
+            <a>DEMAND FULL REPORT</a>
+          </li>
+          <li>
+            <a
+              [routerLink]="['/demandReportsWavechart']"
+              [routerLinkActive]="['is-active']"
+              >Demand Activity</a
+            >
+          </li>
+          <li>
+            <a
+              [routerLink]="['/demandReportsLocations']"
+              [routerLinkActive]="['is-active']"
+              >Demand Locations</a
+            >
+          </li>
+          <li>
+            <a
+              [routerLink]="['/demandReportsProfile']"
+              [routerLinkActive]="['is-active']"
+              >Demand Profile</a
+            >
+          </li>
+          <li>
+            <a
+              [routerLink]="['/demandReportsTotalDemand']"
+              [routerLinkActive]="['is-active']"
+              >Demand Status</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div gridCell class="card card-body">
+      <div class="card-title">
+        <div class="card-title-text">Summary</div>
+      </div>
+      <div class="card-element four-totals">
+        <div class="lines">
+          <div class="title">Order Count</div>
+          <div class="numbers">9,999</div>
+        </div>
+        <div class="lines">
+          <div class="title">Order Sales</div>
+          <div class="numbers">$ 99.9</div>
+        </div>
+        <div class="lines">
+          <div class="title">Customers</div>
+          <div class="numbers">99</div>
+        </div>
+        <div class="lines">
+          <div class="title">Parts</div>
+          <div class="numbers">999</div>
+        </div>
+      </div>
+    </div>
+    <div gridCell gcColSpan="3" class="card card-body">
+      <div class="card-title">
+        <div class="card-title-text">Demand Details</div>
+      </div>
+      <app-vertgrid></app-vertgrid>
+    </div>
+  </app-grid-container>
+</div>

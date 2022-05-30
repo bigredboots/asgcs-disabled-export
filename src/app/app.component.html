@@ -1,0 +1,120 @@
+<div class="idle modal-window">
+  <div *ngIf="idleState == 'warning' || idleState == 'timedout'">
+    <div class="warning-modal" *ngIf="idleState == 'warning'">
+      <div class="loader-text">
+        This is a warning message. <br />You will see the log-in modal in
+        <div class="countdown">{{ countdown }} seconds</div>
+      </div>
+      <button class="blue" (click)="reset($event)">Resume your session</button>
+    </div>
+    <div class="login-modal" *ngIf="idleState == 'timedout'">
+      <div class="loader-text">
+        <div class="timedout-copy">
+          Please log in to continue your working session.
+        </div>
+        <label for="username">Username: </label>
+        <input type="text" />
+      </div>
+      <label for="username">Password: </label>
+      <input type="password" />
+      <div class="login-buttons">
+        <button class="secondary">Return Home</button>
+        <button class="blue" (click)="logout($event)">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="filter-modal modal-window">
+  <div class="filter-header">
+    <span class="filter-title">Filters</span>
+    <span class="filter-close" (click)="CloseFilters()">+</span>
+  </div>
+  <div class="filter-choices">
+    <label for="filter-one">Example Filter Title 1</label>
+    <span #multiselectContainer class="filter-input k-dropdown-wrap active">
+      <kendo-multiselect
+        #multiselect
+        kendoMultiSelectSummaryTag
+        placeholder="(2) Selected"
+      ></kendo-multiselect>
+      <span class="k-select">
+        <span class="k-icon k-i-arrow-s"></span>
+      </span>
+    </span>
+
+    <label for="filter-one">Example Filter Name</label>
+    <span #multiselectContainer class="filter-input k-dropdown-wrap">
+      <kendo-multiselect
+        #multiselect
+        kendoMultiSelectSummaryTag
+        placeholder="Select"
+      ></kendo-multiselect>
+      <span class="k-select">
+        <span class="k-icon k-i-arrow-s"></span>
+      </span>
+    </span>
+
+    <label for="filter-one">Sample Titletag 3</label>
+    <span #multiselectContainer class="filter-input k-dropdown-wrap">
+      <kendo-multiselect
+        #multiselect
+        kendoMultiSelectSummaryTag
+        placeholder="Select"
+      ></kendo-multiselect>
+      <span class="k-select">
+        <span class="k-icon k-i-arrow-s"></span>
+      </span>
+    </span>
+
+    <label for="filter-one">Sample Titletag 4</label>
+    <span #multiselectContainer class="filter-input k-dropdown-wrap">
+      <kendo-multiselect
+        #multiselect
+        kendoMultiSelectSummaryTag
+        placeholder="Select"
+      ></kendo-multiselect>
+      <span class="k-select">
+        <span class="k-icon k-i-arrow-s"></span>
+      </span>
+    </span>
+
+    <label for="filter-one">Sample Titletag 5</label>
+    <span #multiselectContainer class="filter-input k-dropdown-wrap">
+      <kendo-multiselect
+        #multiselect
+        kendoMultiSelectSummaryTag
+        placeholder="Select"
+      ></kendo-multiselect>
+      <span class="k-select">
+        <span class="k-icon k-i-arrow-s"></span>
+      </span>
+    </span>
+
+    <label for="filter-one">Sample Titletag 6</label>
+    <span #multiselectContainer class="filter-input k-dropdown-wrap">
+      <kendo-multiselect
+        #multiselect
+        kendoMultiSelectSummaryTag
+        placeholder="Select"
+      ></kendo-multiselect>
+      <span class="k-select">
+        <span class="k-icon k-i-arrow-s"></span>
+      </span>
+    </span>
+    <button class="blue" (click)="applyExpandedFilters()">Apply</button>
+  </div>
+</div>
+
+<app-dashboard-layout [configuration]="configuration">
+  <div container="sidePanel" id="sidebar">
+    <app-navigation-bar></app-navigation-bar>
+    <app-navigation-side-panel [links]="links"></app-navigation-side-panel>
+  </div>
+
+  <div container="header">
+    <app-header></app-header>
+  </div>
+  <div container="mainContent">
+    <router-outlet></router-outlet>
+  </div>
+</app-dashboard-layout>

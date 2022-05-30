@@ -1,0 +1,56 @@
+@import '../../../scss/global';
+::ng-deep {
+  app-sidebar {
+    position: absolute;
+    top: 0px;
+    right: -330px;
+    width: 270px;
+    background: $grey-darker;
+    color: $white;
+    height: 100vh;
+    z-index: 4;
+    padding: 15px 45px 15px 15px;
+    transition: 0.4s all $cubic-transition;
+  }
+  .sidebar-active app-sidebar {
+    right: -30px;
+  }
+}
+.sidebar-top {
+  display: flex;
+  justify-content: space-between;
+
+  .user-block {
+    gap: 10px;
+    align-items: center;
+  }
+  .settings-close {
+    display: block;
+    transform: rotate(45deg);
+    font-size: $largest-font;
+    cursor: pointer;
+    transition: $fast-transition;
+
+    &:hover {
+      transform: rotate(45deg) scale(1.2);
+    }
+  }
+  label {
+    font-size: $large-font;
+    padding-bottom: 3px;
+    display: inline;
+  }
+}
+.input-block {
+  margin: 20px 0;
+
+  .k-input {
+    width: 100%;
+  }
+}
+
+.logout {
+  position: absolute;
+  bottom: 50px;
+  width: 270px;
+}

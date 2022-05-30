@@ -1,0 +1,34 @@
+@import '../../../scss/global';
+
+.menu-label {
+  position: relative;
+}
+.menu-check {
+  opacity: 0;
+  left: 0;
+  right: 0px;
+  position: absolute;
+}
+.menu-check:checked ~ ul {
+  max-height: 1000px;
+}
+.modal-window {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  position: absolute;
+  width: 400px;
+  background: $grey-color;
+  padding: 10px;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 10px;
+  z-index: 9;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: 1.3s cubic-bezier(0.1, 1.1, 0.23, 1.01) all;
+  
+  opacity: 0;
+}

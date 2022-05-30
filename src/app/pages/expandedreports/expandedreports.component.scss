@@ -1,0 +1,12 @@
+.menu-label {
+  position: relative;
+}
+.menu-check {
+  opacity: 0;
+  left: 0;
+  right: 0px;
+  position: absolute;
+}
+.menu-check:checked ~ ul {
+  max-height: 1000px;
+}

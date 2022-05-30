@@ -1,0 +1,90 @@
+<div class="page-container">
+  <app-grid-container>
+    <div gridCell gcColSpan="2" gcRowSpan="2" class="card card-body">
+      <div class="card-title">
+        <div class="left-side-content">
+          <div class="card-title-text">Supply Locations</div>
+          <div class="filter-item">
+            <span class="k-dropdown-wrap">
+              <span class="k-input">Display<span>Value</span></span>
+              <span class="k-select">
+                <span class="k-icon k-i-arrow-s"></span>
+              </span>
+            </span>
+          </div>
+          <div>
+            <span class="map-from">Locations: </span>
+          </div>
+        </div>
+        <div class="card-icons">
+          <!--info icons -->
+        </div>
+      </div>
+      <img
+        src="https://stackblitz.com/files/asgcs/github/bigredboots-arrow/angular-component-library-example-part-3-progress-45zjbr/master/src/assets/images/map-one-spot.jpg"
+      />
+    </div>
+
+    <div gridCell class="card card-body">
+    <div class="card-title">
+    <div class="card-title-text">Summary</div>
+    <div class="card-icons" #flocationsoverview>
+      <a
+        class="maximize-icon"
+        [routerLink]="['/demandReportsLocations']"
+      ></a>
+      <div class="moreinfo-icon" (click)="FLocationsMoreInfo()"></div>
+    </div>
+  </div>
+      <div class="card-element four-totals">
+        <div class="lines">
+          <div class="title">Order Count</div>
+          <div class="numbers">9,999</div>
+        </div>
+        <div class="lines">
+          <div class="title">Order Cost</div>
+          <div class="numbers">$ 99.9M</div>
+        </div>
+        <div class="lines">
+          <div class="title">Suppliers</div>
+          <div class="numbers">99</div>
+        </div>
+        <div class="lines">
+          <div class="title">Parts</div>
+          <div class="numbers">999</div>
+        </div>
+      </div>
+    </div>
+    <div gridCell class="card card-body">
+      <div class="coming-soon">COMING SOON</div>
+      <div class="card-title">
+        <div class="left-side-content">
+          <div class="card-title-text">Hubs Status</div>
+          <div class="filter-item">
+            <span class="k-dropdown-wrap">
+              <span class="k-input">Display<span>$USD</span></span>
+              <span class="k-select">
+                <span class="k-icon k-i-arrow-s"></span>
+              </span>
+            </span>
+          </div>
+        </div>
+        <div class="card-icons">
+          <!--info icons -->
+        </div>
+      </div>
+      <img
+        src="https://stackblitz.com/files/asgcs/github/bigredboots-arrow/angular-component-library-example-part-3-progress-45zjbr/master/src/assets/images/treemap-supplier.jpg"
+      />
+      <div class="total-legend treemap">
+        <div class="good">On Time</div>
+        <div class="warn">1-3 Day</div>
+        <div class="caution">4-15 D</div>
+        <div class="late">+15 D</div>
+      </div>
+    </div>
+    <div gridCell gcColSpan="3" class="card card-body">
+    <app-vertgrid></app-vertgrid>
+    </div>
+  </app-grid-container>
+</div>

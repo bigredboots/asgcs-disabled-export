@@ -1,0 +1,113 @@
+.icon {
+  text-indent: -9999px;
+  overflow: hidden;
+}
+.k-icon {
+  font-size: 20px;
+}
+.st0 {
+  fill: #eeeeee;
+}
+
+.main-navigation ul li.dashboard .icon::before {
+  background-image: url(/assets/icons/dashboard.svg);
+}
+.main-navigation ul li.health .icon::before {
+  background-image: url(/assets/icons/new-healthcheck.svg);
+}
+.main-navigation ul li.demand .icon::before {
+  background-image: url(/assets/icons/demand.svg);
+}
+.main-navigation ul li.outbound .icon::before {
+  background-image: url(/assets/icons/shipping.svg);
+}
+.main-navigation ul li.hubs .icon::before {
+  background-image: url(/assets/icons/hubs.svg);
+}
+.main-navigation ul li.inbound .icon::before {
+  background-image: url(/assets/icons/shipping.svg);
+  transform: rotateY(180deg);
+}
+.main-navigation ul li.supply .icon::before {
+  background-image: url(/assets/icons/supply.svg);
+}
+.main-navigation ul li.reports .icon::before {
+  background-image: url(/assets/icons/grid.svg);
+}
+.main-navigation ul li.raw .icon::before {
+  background-image: url(/assets/icons/rawmaterials.svg);
+}
+.main-navigation ul li.settings .icon::before {
+  background-image: url(/assets/icons/settings.svg);
+}
+
+.main-navigation ul li.hubs .icon,
+.main-navigation ul li.reports .icon,
+.main-navigation ul li.settings .icon,
+.main-navigation ul li.supply .icon {
+  cursor: pointer;
+}
+
+.company-logo {
+  background-image: url(/assets/tenants/companylogo.svg);
+}
+.home-logo .company-logo.ciena {
+  background-image: url(/assets/tenants/ciena-logo.svg);
+}
+
+.top-navigation-block .notifications .icon {
+  background-image: url(/assets/icons/notification.svg);
+}
+
+.top-navigation-block .user-block .avatar {
+  background-image: url(/assets/icons/profile.svg);
+}
+.sidebar-top .user-block .avatar {
+  background-image: url(/assets/icons/profile.svg);
+}
+.filters:before {
+  background-image: url(/assets/icons/filter.svg);
+}
+.expand-filters:before {
+  background-image: url(/assets/icons/slider-filter.svg);
+}
+
+// .main-navigation ul li.demand.status-good::before {
+//   background-image: url(/assets/icons/demand-active.svg);
+// }
+.ciena {
+  background-image: url(/assets/tenants/ciena-logo.svg);
+}
+.maximize-icon {
+  background-image: url(/assets/icons/maximize.svg);
+  filter: brightness(0.8);
+}
+.moreinfo-icon {
+  background-image: url(/assets/icons/info.svg);
+  filter: saturate(0) brightness(1.5);
+}
+.search-field .submit {
+  background-image: url(/assets/icons/search.svg);
+}
+.search-component .submit {
+  background-image: url(/assets/icons/search.svg);
+}
+
+.excelbutton span {
+  background-image: url(/assets/icons/excel.svg);
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  margin-right: 2px;
+}
+
+.sliderimg {
+  background-image: url('https://cdn.jsdelivr.net/gh/bigredboots/asgcs-sprint-14@master/src/assets/images/sliders.png');
+  width: 100%;
+  height: 31px;
+  content: '';
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+}

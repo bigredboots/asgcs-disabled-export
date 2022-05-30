@@ -1,0 +1,17 @@
+<div
+  class="container"
+  [ngClass]="configuration.sidePanelPosition"
+  [class.reportscreen]="hideFilter"
+>
+  <div class="left-column" [ngClass]="currentPanelState">
+    <ng-content select="[container=sidePanel]"></ng-content>
+  </div>
+  <div class="right-column">
+    <div class="header" [ngClass]="currentPanelState">
+      <ng-content select="[container=header]"></ng-content>
+    </div>
+    <div class="main-content" [ngClass]="currentPanelState">
+      <ng-content select="[container=mainContent]"></ng-content>
+    </div>
+  </div>
+</div>

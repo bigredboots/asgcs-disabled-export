@@ -1,0 +1,290 @@
+<head>
+<title>Kendo UI for Angular Example Application</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://kendo.cdn.telerik.com/themes/4.42.0/default/default-main-dark.css"></link>
+
+<style>
+    body {margin: 0px;padding: 0px;
+        background: #29272a;
+        color: #ccc;
+        font-family: "Arrow Display", "Helvetica Neue", "Helvetica",  Arial;
+        font-size: 16px;
+    }
+    my-app { display: block; box-sizing: border-box; padding: 30px; }
+    my-app > .k-icon.k-i-loading { font-size: 64px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .example-wrapper { min-height: 280px; align-content: flex-start; }
+    .example-wrapper p, .example-col p { margin: 0 0 10px; }
+    .example-wrapper p:first-child, .example-col p:first-child { margin-top: 0; }
+    .example-col { display: inline-block; vertical-align: top; padding-right: 20px; padding-bottom: 20px; }
+    .example-config { margin: 0 0 20px; padding: 20px; background-color: rgba(0,0,0,.03); border: 1px solid rgba(0,0,0,.08); }
+
+    /*new theme for grid */
+    .k-input, .k-select {
+        background: #dcdcdc;
+        display: flex;
+        align-items: center;
+        padding: 0px 5px;
+        color: black;
+        font-size: 14px;
+        border-radius: 5px 0px 0px 5px;
+        height: auto;
+        width: unset;
+    }
+    .k-select {
+        padding: 0px;
+    }
+    kendo-grid-column-chooser .k-icon, .k-grid-excel .k-icon {
+        border: 0px;
+        margin: 0px;
+    }
+    .k-i-more-vertical::before {
+    content: "\e031";
+}
+    .k-pager-info {
+        font-weight: bold;
+        font-size: 16px;
+    }
+    .k-dropdown .k-dropdown-wrap.k-state-focused {
+        box-shadow: none;
+    }
+    .k-dropdown .k-dropdown-wrap .k-select, .k-dropdowntree .k-dropdown-wrap .k-select {
+        padding: 0px;
+        border-radius: 0px 5px 5px 0;
+        height: 17px;
+        border-left: 1px solid #404040;
+    }
+    .k-grid {color: #ccc; background: none}
+    
+    .card-title-text {
+        letter-spacing: .5px;
+        color: #ccc;
+        font-weight: 600;
+        font-size: 16px;
+    }
+    
+    button.k-button.k-grid-excel {
+    background: #009ddc;
+    box-shadow: none;
+    border-radius: 5px !important;
+    font-size: 14px;
+    border-width: 0px;
+    height: 24px;
+}
+button.k-button.k-grid-excel:hover {
+    background: #00b6ff;
+    transition: .1s ease-in all;
+  }
+button.k-button.k-bare.k-button-icon {
+    background: #009ddb !important;
+    height: 24px;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 85px;
+    display: flex;
+    justify-content: space-between;
+}
+button.k-button.k-bare.k-button-icon:hover {
+    background: #00b6ff;
+    transition: .1s ease-in all;
+  }
+button.k-button.k-bare.k-button-icon:after {
+    content: 'Columns';
+    opacity: 1;
+    display: block;
+    box-shadow: none;
+    position: relative;
+}
+
+.k-column-title,
+.k-pager-numbers .k-link:hover {
+    color: white;
+}
+.k-filterable > .k-cell-inner .k-link {
+    cursor: move;
+}
+.k-grid-content-locked {
+    background: #1a1a1a;
+    color: #dcdcdc;
+}
+.k-grid-header .k-grid-filter:hover {
+    border-radius: 5px;
+}
+
+.k-pager-numbers .k-link.k-state-selected {
+    background-color: #009ddb;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+.k-pager-numbers .k-link,
+.k-icon.k-i-arrow-e,
+.k-link.k-pager-nav.k-pager-last {
+    color: #009ddb;
+}
+.k-pager-sizes .k-dropdown .k-dropdown-wrap,
+.k-pager-sizes .k-dropdowntree .k-dropdown-wrap {
+    border-radius: 5px;
+}
+/* div.k-grid-header {
+    border-radius: 10px 0px 0px 0px;
+    padding: 0px !important;
+} */
+.k-text-selection ::selection {
+    background-color: #009ddb;
+    color: #ffffff;
+}
+.k-text-primary,
+.k-color-primary,
+.k-bg-primary,
+.k-grid-header .k-i-sort-asc-sm,
+.k-grid-header .k-i-sort-desc-sm,
+.k-grid-header .k-sort-order {
+    color: #009ddb !important;
+}
+.k-list .k-item.k-state-selected,
+.k-list-optionlabel.k-state-selected,
+.k-columnmenu-item.k-state-selected {
+    background-color: #009ddb !important;
+}
+.k-checkbox:checked,
+.k-checkbox.k-checked {
+    border-color: #009ddb;
+    color: #ffffff;
+    background-color: #009ddb;
+}
+.k-checkbox:checked:focus,
+.k-checkbox.k-checked.k-state-focus {
+    box-shadow: 0 0 0 2px rgba(0, 157, 219, 0.3);
+}
+.k-checkbox.k-invalid,
+.k-checkbox.k-state-invalid,
+.k-checkbox.ng-invalid.ng-touched,
+.k-checkbox.ng-invalid.ng-dirty {
+    border-color: rgba(0, 157, 219, 0.5);
+}
+.k-button-primary, .k-button.k-primary {
+    border-color: #009ddb;
+    color: #ffffff;
+    background-color: #009ddb;
+    background-image: none;
+    padding: 4px 10px;
+    border-radius: 5px;
+}
+.k-button-primary:hover, .k-button.k-primary:hover, .k-button-primary.k-state-hover, .k-state-hover.k-button.k-primary {
+    border-color: #00b7ff;
+    background-color: #00b7ff;
+}
+
+.k-button-primary:active, .k-button.k-primary:active, .k-button-primary.k-state-active, .k-state-active.k-button.k-primary {
+    border-color: #00b7ff;
+    background-color: #00b7ff;
+}
+.k-action-buttons .k-button,
+.k-button-secondary {
+    border-color: rgba(0, 0, 0, 0.08);
+    color: #009ddb;
+    background-color: white;
+    background-image: none;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 2px 10px;
+}
+.k-button-primary.k-state-selected,
+.k-state-selected.k-button.k-primary,
+.k-action-buttons .k-button.k-primary {
+    border-color: #009ddb;
+    background-color: #009ddb;
+    color: white;
+}
+.k-grid-header .k-grid-filter:hover,
+.k-grid-header .k-header-column-menu:hover,
+.k-grid-header .k-hierarchy-cell .k-icon:hover {
+    background-color: #484848;
+    color: white;
+    font-weight: 600;
+}
+
+h4 {
+    white-space: normal;
+    font-size: 20px;
+}
+.k-grid .k-grid-content td,
+.k-grid .k-grid-content-locked td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.k-grid td {
+    color: #ccc;
+    font-size: 14px;
+    border-top: 1px solid #151515;
+    border-bottom: 1px solid #151515;
+}
+.k-grid-header .k-header,
+.k-grid .k-grid-header-locked .k-header {
+    font-size: 16px;
+    border-bottom: 2px solid white;
+}
+.k-icon.k-i-more-vertical {
+    border: 0px;
+    font-size: 16px;
+    color: #ccc;
+}
+.full-screen {
+    background: #009ddb;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 0px 5px;
+    cursor: pointer;
+}
+.full-screen.closed {
+    display:none;
+}
+.fullscreened .full-screen.closed {
+    display:flex;
+}
+.fullscreened .full-screen.opened {
+    display:none;
+}
+.full-screen span {
+    display: block;
+    width: 15px;
+    height: 15px;
+
+background:
+    linear-gradient(to right, white 2px, transparent 2px) 0 0,
+    linear-gradient(to right, white 2px, transparent 2px) 0 100%,
+    linear-gradient(to left, white 2px, transparent 2px) 100% 0,
+    linear-gradient(to left, white 2px, transparent 2px) 100% 100%,
+    linear-gradient(to bottom, white 2px, transparent 2px) 0 0,
+    linear-gradient(to bottom, white 2px, transparent 2px) 100% 0,
+    linear-gradient(to top, white 2px, transparent 2px) 0 100%,
+    linear-gradient(to top, white 2px, transparent 2px) 100% 100%;
+
+background-repeat: no-repeat;
+background-size: 5px 5px;
+}
+@media (max-width: 500px) {
+    .card-title-buttons {
+        display: none;
+    }
+    .k-grid .k-grid-aria-root {
+        padding: 0px;
+    }
+    div.k-grid-header {
+        display: none;
+    }
+}
+</style>
+</head>
+
+<body>
+  <my-app>loading</my-app>
+</body>

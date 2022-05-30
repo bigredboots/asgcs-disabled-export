@@ -1,0 +1,227 @@
+<div class="page-container">
+  <app-grid-container>
+    <div gridCell gcColSpan="2" gcRowSpan="2" class="card card-body">
+      <div class="card-title">
+        <div class="left-side-content">
+          <div class="card-title-text">Outbound Locations</div>
+          <div class="filter-items">
+            <div class="filter-item">
+              <span class="k-dropdown-wrap">
+                <span class="k-input">Display<span>$USD</span></span>
+                <span class="k-select">
+                  <span class="k-icon k-i-arrow-s"></span>
+                </span>
+              </span>
+            </div>
+            <div>
+              <span class="map-from">FROM:</span>
+              <span class="map-to">TO:</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-icons" #mapmoreinfo>
+          <a
+            class="maximize-icon"
+            [routerLink]="['/demandReportsLocations']"
+          ></a>
+          <!-- <div class="moreinfo-icon" (click)="FMapMoreInfo()"></div> -->
+        </div>
+      </div>
+      <img
+        src="https://stackblitz.com/files/asgcs/github/bigredboots-arrow/angular-component-library-example-part-3-progress-45zjbr/master/src/assets/images/map-two-spots-line.jpg"
+      />
+      <!-- <div class="moreinfo-block" #imapmoreinfo>
+        <div class="moreinfo-header">
+          The content is related to the Master set of filters on the top.<br /><br />
+          AFTER YOU SEARCH INSIDE THE GRID (drill down inside the grid), the
+          visual on the top will not follow along. ONCE you manipulate again the
+          Master Top Filters, this grid will reset and start over. "Saved
+          Preferences" is a feature coming soon. In the meantime, your
+          adjustments will stay during your browing sesson (reseted once you
+          refresh the browser, the website or log-out).
+        </div>
+      </div> -->
+    </div>
+    <div gridCell class="card card-body">
+      <div class="card-title">
+        <div class="card-title-text">Summary</div>
+      </div>
+      <div class="card-element four-totals">
+        <div class="lines">
+          <div class="title">Distinct Bill TOs</div>
+          <div class="numbers">9,999</div>
+        </div>
+        <div class="lines">
+          <div class="title">Order Sales</div>
+          <div class="numbers">$ 99.9</div>
+        </div>
+        <div class="lines">
+          <div class="title">Distinct Ship TOs</div>
+          <div class="numbers">99</div>
+        </div>
+        <div class="lines">
+          <div class="title">Orders Shipped</div>
+          <div class="numbers">999</div>
+        </div>
+      </div>
+    </div>
+    <div gridCell class="card card-body">
+      <div class="card-title">
+        <div class="left-side-content">
+          <div class="card-title-text">Outbound Status</div>
+          <div class="filter-items">
+            <div class="filter-item">
+              <span class="k-dropdown-wrap">
+                <span class="k-input">Display<span>$USD</span></span>
+                <span class="k-select">
+                  <span class="k-icon k-i-arrow-s"></span>
+                </span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="card-icons" #treemapmoreinfo>
+          <a
+            class="maximize-icon"
+            [routerLink]="['/demandReportsLocations']"
+          ></a>
+          <!-- <div class="moreinfo-icon" (click)="TreeMapMoreInfo()"></div> -->
+        </div>
+      </div>
+      <img
+        src="https://stackblitz.com/files/asgcs/github/bigredboots-arrow/angular-component-library-example-part-3-progress-45zjbr/master/src/assets/images/treemap-supplier.jpg"
+      />
+      <div class="total-legend treemap">
+        <div class="good">On Time</div>
+        <div class="warn">1-3 Day</div>
+        <div class="caution">4-15 D</div>
+        <div class="late">+15 D</div>
+      </div>
+      <!-- <div class="moreinfo-block" #itreemapmoreinfo>
+        <div class="moreinfo-header">
+          The content is related to the Master set of filters on the top.<br /><br />
+          AFTER YOU SEARCH INSIDE THE GRID (drill down inside the grid), the
+          visual on the top will not follow along. ONCE you manipulate again the
+          Master Top Filters, this grid will reset and start over. "Saved
+          Preferences" is a feature coming soon. In the meantime, your
+          adjustments will stay during your browing sesson (reseted once you
+          refresh the browser, the website or log-out).
+        </div>
+      </div> -->
+    </div>
+    <div gridCell gcColSpan="3" class="card card-body">
+      <div class="card-title">
+        <div class="left-side-content">
+          <div class="card-title-text">Outbound Profile</div>
+          <div class="filter-items">
+            <div class="filter-item">
+              <span class="k-dropdown-wrap">
+                <span class="k-input">Group<span>Customers</span></span>
+                <span class="k-select">
+                  <span class="k-icon k-i-arrow-s"></span>
+                </span>
+              </span>
+            </div>
+
+            <div class="filter-item">
+              <span class="k-dropdown-wrap">
+                <span class="k-input">Display<span>$USD</span></span>
+                <span class="k-select">
+                  <span class="k-icon k-i-arrow-s"></span>
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="total-legend">
+            <div class="firm">Firm</div>
+            <div class="forecast">Forecast</div>
+            <div class="buffer">Buffer</div>
+          </div>
+        </div>
+        <div class="card-icons" #profilemoreinfo>
+          <a
+            class="maximize-icon"
+            [routerLink]="['/demandReportsLocations']"
+          ></a>
+          <!-- <div class="moreinfo-icon" (click)="DProfileMoreInfo()"></div> -->
+        </div>
+      </div>
+      <img
+        src="https://stackblitz.com/files/asgcs/github/bigredboots-arrow/angular-component-library-example-part-3-progress-45zjbr/master/src/assets/images/stackbarchart2.jpg"
+      />
+      <!-- <div class="moreinfo-block" #iprofilemoreinfo>
+        <div class="moreinfo-header">
+          The content is related to the Master set of filters on the top.<br /><br />
+          AFTER YOU SEARCH INSIDE THE GRID (drill down inside the grid), the
+          visual on the top will not follow along. ONCE you manipulate again the
+          Master Top Filters, this grid will reset and start over. "Saved
+          Preferences" is a feature coming soon. In the meantime, your
+          adjustments will stay during your browing sesson (reseted once you
+          refresh the browser, the website or log-out).
+        </div>
+      </div> -->
+    </div>
+    <div gridCell gcColSpan="3" class="card card-body">
+      <div class="card-title">
+        <div class="left-side-content">
+          <div class="card-title-text">Outbound Activity</div>
+          <div class="filter-items">
+            <div class="filter-item">
+              <span class="k-dropdown-wrap">
+                <span class="k-input">Group<span>Customers</span></span>
+                <span class="k-select">
+                  <span class="k-icon k-i-arrow-s"></span>
+                </span>
+              </span>
+            </div>
+            <div class="filter-item">
+              <span class="k-dropdown-wrap">
+                <span class="k-input">Display<span>$USD</span></span>
+                <span class="k-select">
+                  <span class="k-icon k-i-arrow-s"></span>
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="total-legend">
+            <div class="firm">Firm</div>
+            <div class="buffer">Buffer</div>
+            <div class="forecast">Forecast</div>
+          </div>
+        </div>
+        <div class="card-icons" #activitymoreinfo>
+          <div class="buttonjump" #reportsopen>
+            <div class="jump-title" (click)="DReportsOpen()">
+              Optional Details
+            </div>
+            <div class="inner-jump-links">
+              <a [routerLink]="['/expandedreports']">ExpandedReports Example Link</a>
+              <a [routerLink]="['/expandedreports']">ExpandedReports Example Link</a>
+              <a [routerLink]="['/expandedreports']">ExpandedReports Example Link</a>
+              <a [routerLink]="['/expandedreports']">ExpandedReports Example Link</a>
+            </div>
+          </div>
+          <!-- <div class="moreinfo-icon" (click)="DActivityMoreInfo()"></div> -->
+        </div>
+      </div>
+      <div class="horizgrid-block">
+        <img
+          src="https://stackblitz.com/files/asgcs-wn3wtk/github/bigredboots/asgcs-newest/master/src/assets/images/line-chart.png"
+          style="height: auto"
+        />
+        <app-horizgrid></app-horizgrid>
+      </div>
+      <!-- <div class="moreinfo-block" #dactivitymoreinfo>
+        <div class="moreinfo-header">
+          The content is related to the Master set of filters on the top.<br /><br />
+          AFTER YOU SEARCH INSIDE THE GRID (drill down inside the grid), the
+          visual on the top will not follow along. ONCE you manipulate again the
+          Master Top Filters, this grid will reset and start over. "Saved
+          Preferences" is a feature coming soon. In the meantime, your
+          adjustments will stay during your browing sesson (reseted once you
+          refresh the browser, the website or log-out).
+        </div>
+      </div> -->
+    </div>
+  </app-grid-container>
+</div>

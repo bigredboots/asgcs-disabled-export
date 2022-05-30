@@ -1,0 +1,19 @@
+@import '../../../scss/global';
+
+.breadcrumb-label {
+  text-decoration: none;
+  list-style: none;
+}
+// span ~ app-breadcrumb .breadcrumb-label::before
+.breadcrumb-label::before {
+  content: '';
+  border-left: 2px solid $grey-lighter;
+  border-bottom: 2px solid $grey-lighter;
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  transform: rotate(-135deg);
+  margin: 0px 10px;
+  top: -2px;
+  position: relative;
+}

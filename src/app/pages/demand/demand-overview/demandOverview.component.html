@@ -1,0 +1,125 @@
+<div class="page-container">
+  <app-grid-container>
+    <div gridCell class="card card-body" (mouseleave)="focusOutDonutOne()">
+      <div class="card-title">
+        <div class="card-title-text">Demand Donut One</div>
+        <div class="card-icons" #partoverview>
+          <div
+            class="moreinfo-icon"
+            (click)="PartOverviewtoggleMoreInfo()"
+          ></div>
+        </div>
+      </div>
+      <div class="card-items charting">
+        <app-donut-chart></app-donut-chart>
+      </div>
+      <div class="moreinfo-block" #ipartoverview>
+        <div class="moreinfo-header">
+          The content is related to the Master set of filters on the top.<br /><br />
+          AFTER YOU SEARCH INSIDE THE GRID (drill down inside the grid), the
+          visual on the top will not follow along. ONCE you manipulate again the
+          Master Top Filters, this grid will reset and start over. "Saved
+          Preferences" is a feature coming soon. In the meantime, your
+          adjustments will stay during your browing sesson (reseted once you
+          refresh the browser, the website or log-out). <br /><br />
+          The content is related to the Master set of filters on the top.<br /><br />
+          AFTER YOU SEARCH INSIDE THE GRID (drill down inside the grid), the
+          visual on the top will not follow along. ONCE you manipulate again the
+          Master Top Filters, this grid will reset and start over. "Saved
+          Preferences" is a feature coming soon. In the meantime, your
+          adjustments will stay during your browing sesson (reseted once you
+          refresh the browser, the website or log-out).
+        </div>
+      </div>
+    </div>
+    <div gridCell class="card card-body">
+      <div class="card-title">
+        <div class="card-title-text">Demand Donut Two</div>
+        <div class="card-icons" #fsiteoverview>
+          <!-- <div class="moreinfo-icon" (click)="FsitetoggleMoreInfo()"></div> -->
+        </div>
+      </div>
+      <!-- <div class="moreinfo-block" #ifsiteoverview>
+        <div class="moreinfo-header">
+          The content is related to Master set of filters on the top.<br /><br />
+          AFTER YOU SEARCH INSIDE THE GRID (drill down inside the grid), the
+          visual on the top will not follow along. ONCE you manipulate again the
+          Master Top Filters, this grid will reset and start over. "Saved
+          Preferences" is a feature coming soon.
+        </div> 
+      </div> -->
+      <div class="card-items charting">
+        <app-donut-chart></app-donut-chart>
+      </div>
+    </div>
+    <div gridCell class="card card-body">
+      <div class="card-title">
+        <div class="card-title-text">Demand Summary</div>
+      </div>
+      <div class="card-element four-totals">
+        <div class="lines">
+          <div class="title">Order Count</div>
+          <div class="numbers">9,999</div>
+        </div>
+        <div class="lines">
+          <div class="title">Order Sales</div>
+          <div class="numbers">$ 99.9M</div>
+        </div>
+        <div class="lines">
+          <div class="title">Customers</div>
+          <div class="numbers">99</div>
+        </div>
+        <div class="lines">
+          <div class="title">Parts</div>
+          <div class="numbers">999</div>
+        </div>
+      </div>
+    </div>
+    <div
+      gridCell
+      gcColSpan="3"
+      class="card card-body"
+      (mouseleave)="focusOutMap()"
+    >
+      <div class="card-title">
+        <div class="left-side-content">
+          <div class="card-title-text">Demand Locations</div>
+          <div class="filter-item">
+            <span class="k-dropdown-wrap">
+              <span class="k-input">Display<span>$USD</span></span>
+              <span class="k-select">
+                <span class="k-icon k-i-arrow-s"></span>
+              </span>
+            </span>
+          </div>
+          <div>
+            <span class="map-from">FROM:</span>
+            <span class="map-to">TO:</span>
+          </div>
+        </div>
+        <div class="card-icons" #flocationsoverview>
+          <a
+            class="maximize-icon"
+            [routerLink]="['/demandReportsLocations']"
+          ></a>
+          <div class="moreinfo-icon" (click)="FLocationsMoreInfo()"></div>
+        </div>
+      </div>
+
+      <div class="moreinfo-block" #iflocationsoverview>
+        <div class="moreinfo-header">
+          The content is related to the Master set of filters on the top.<br /><br />
+          AFTER YOU SEARCH INSIDE THE GRID (drill down inside the grid), the
+          visual on the top will not follow along. ONCE you manipulate again the
+          Master Top Filters, this grid will reset and start over. "Saved
+          Preferences" is a feature coming soon. In the meantime, your
+          adjustments will stay during your browing sesson (reseted once you
+          refresh the browser, the website or log-out).
+        </div>
+      </div>
+      <img
+        src="https://stackblitz.com/files/asgcs/github/bigredboots-arrow/angular-component-library-example-part-3-progress-45zjbr/master/src/assets/images/map-two-spots.jpg"
+      />
+    </div>
+  </app-grid-container>
+</div>

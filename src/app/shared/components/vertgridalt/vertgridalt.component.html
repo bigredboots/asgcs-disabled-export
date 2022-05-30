@@ -1,0 +1,286 @@
+<!-- <div
+  kendoTooltip
+  showOn="none"
+  [tooltipTemplate]="template"
+  filter=".k-grid td"
+  (mouseover)="showTooltip($event)"
+> -->
+
+<div id="alt-vertical-grid-container" class="altvertgrid">
+  <kendo-grid
+    #grid
+    [data]="data"
+    scrollable="scrollable"
+    kendoGridSelectBy="id"
+    [selectedKeys]="mySelection"
+    id="vertical-grid-alt"
+    [pageSize]="5"
+    [pageable]="true"
+    [columnMenu]="{ columnChooser: false }"
+    [skip]="skip"
+  >
+    <!-- [pageable]="{
+    buttonCount: buttonCount,
+    info: info,
+    type: type,
+    pageSizes: pageSizes,
+    previousNext: previousNext,
+    position: position
+  }" -->
+    <ng-template kendoGridToolbarTemplate>
+      <div class="card-title left" #collapsed>
+        <div class="card-title-text">Expanded Vertical Grid Title</div>
+        <div class="expand-button-container">
+          <button class="k-button" id="expandall" (click)="expandAll(grid)">
+            Expand all
+          </button>
+          <button class="k-button" id="collapseall" (click)="collapseAll(grid)">
+            Collapse all
+          </button>
+        </div>
+      </div>
+
+      <div class="filter-block vertgrid">
+        <div class="filters">
+          <span class="filter-title">Filters: </span>
+        </div>
+        <div class="overview-filters">
+          <div class="filter-container">
+            <div class="block-filters">
+              <div class="filter-item">
+                <div class="filter-label">Status</div>
+                <span class="k-dropdown-wrap">
+                  <span class="k-input">Select</span>
+                  <span class="k-select">
+                    <span class="k-icon k-i-arrow-s"></span>
+                  </span>
+                </span>
+              </div>
+              <div class="filter-item">
+                <div class="filter-label">Dates</div>
+                <span class="k-dropdown-wrap">
+                  <span class="k-input">Select</span>
+                  <span class="k-select"
+                    ><span class="k-icon k-i-arrow-s"></span
+                  ></span>
+                </span>
+              </div>
+
+              <div class="filter-item">
+                <div class="filter-label">Type</div>
+                <span class="k-dropdown-wrap">
+                  <span class="k-input">Select</span>
+                  <span class="k-select"
+                    ><span class="k-icon k-i-arrow-s"></span
+                  ></span>
+                </span>
+              </div>
+
+              <div class="filter-item">
+                <div class="filter-label">Sites</div>
+                <span class="k-dropdown-wrap"
+                  ><span class="k-input">Select</span>
+                  <span class="k-select"
+                    ><span class="k-icon k-i-arrow-s"></span></span
+                ></span>
+              </div>
+
+              <div class="filter-item">
+                <div class="filter-label">Supplier</div>
+                <span class="k-dropdown-wrap">
+                  <span class="k-input">Select</span>
+                  <span class="k-select"
+                    ><span class="k-icon k-i-arrow-s"></span
+                  ></span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="block-filterbuttons">
+          <button kendobutton="" class="secondary">Reset</button>
+          <button kendobutton="" class="blue">Apply</button>
+        </div>
+      </div>
+
+      <div class="card-title-buttons">
+        <div class="opened full-screen" (click)="openFullscreen($event)">
+          <span></span>Full Screen
+        </div>
+        <div class="closed full-screen" (click)="closeFullscreen($event)">
+          <span></span>Exit Full Screen
+        </div>
+        <kendo-grid-column-chooser></kendo-grid-column-chooser>
+        <button kendoGridExcelCommand type="button" icon="file-excel">
+          Export to Excel
+        </button>
+      </div>
+    </ng-template>
+
+    <kendo-grid-column field="EricssonPN" width="170"></kendo-grid-column>
+    <kendo-grid-column field="Region" [width]="120"></kendo-grid-column>
+    <kendo-grid-column field="Suppliers" [width]="120"></kendo-grid-column>
+    <kendo-grid-column field="SupplierPNs" [width]="170"></kendo-grid-column>
+    <kendo-grid-column field="Stdlead" [width]="120"></kendo-grid-column>
+    <kendo-grid-column
+      field="2204"
+      [headerClass]="'caldate'"
+      title="Jan 22  2204"
+      [width]="85"
+    ></kendo-grid-column>
+    <kendo-grid-column
+      field="2205"
+      [headerClass]="'caldate'"
+      title="Feb 01   2205"
+      [width]="85"
+    ></kendo-grid-column>
+    <kendo-grid-column
+      field="2206"
+      [headerClass]="'caldate'"
+      title="Feb 8   2206"
+      [width]="85"
+    ></kendo-grid-column>
+    <kendo-grid-column
+      field="2207"
+      [headerClass]="'caldate'"
+      title="Feb 15  2207"
+      [width]="85"
+    ></kendo-grid-column>
+    <kendo-grid-column
+      field="2208"
+      [headerClass]="'caldate'"
+      title="Feb 27  2208"
+      [width]="85"
+    ></kendo-grid-column>
+    <kendo-grid-column
+      field="2209"
+      [headerClass]="'caldate'"
+      title="Mar 03  2209"
+      [width]="85"
+    ></kendo-grid-column>
+    <kendo-grid-column
+      field="2210"
+      [headerClass]="'caldate'"
+      title="Mar 09  2210"
+      [width]="85"
+    ></kendo-grid-column>
+    <kendo-grid-column
+      field="2211"
+      [headerClass]="'caldate'"
+      title="Mar 17  2211"
+      [width]="85"
+    ></kendo-grid-column>
+    <kendo-grid-column
+      field="2212"
+      [headerClass]="'caldate'"
+      title="Mar 24  2212"
+      [width]="85"
+    ></kendo-grid-column>
+    <kendo-grid-column field="Uncomfirmed" [width]="180"></kendo-grid-column>
+    <kendo-grid-column field="OutsideWindow" [width]="180"></kendo-grid-column>
+
+    <ng-template kendoGridDetailTemplate let-dataItem>
+      <kendo-grid [data]="dataItem.secondLevelData" class="secondleveldata">
+        <kendo-grid-column field="EricssonPN" width="170"></kendo-grid-column>
+        <kendo-grid-column field="Region" [width]="120"></kendo-grid-column>
+        <kendo-grid-column field="Suppliers" [width]="120"></kendo-grid-column>
+        <kendo-grid-column
+          field="SupplierPNs"
+          [width]="170"
+        ></kendo-grid-column>
+        <kendo-grid-column field="Stdlead" [width]="120"></kendo-grid-column>
+        <kendo-grid-column field="2204" [width]="80"></kendo-grid-column>
+        <kendo-grid-column field="2205" [width]="80"></kendo-grid-column>
+        <kendo-grid-column field="2206" [width]="80"></kendo-grid-column>
+        <kendo-grid-column field="2207" [width]="80"></kendo-grid-column>
+        <kendo-grid-column field="2208" [width]="80"></kendo-grid-column>
+        <kendo-grid-column field="2209" [width]="80"></kendo-grid-column>
+        <kendo-grid-column field="2210" [width]="80"></kendo-grid-column>
+        <kendo-grid-column field="2211" [width]="80"></kendo-grid-column>
+        <kendo-grid-column field="2212" [width]="80"></kendo-grid-column>
+        <kendo-grid-column
+          field="Uncomfirmed"
+          [width]="180"
+        ></kendo-grid-column>
+        <kendo-grid-column
+          field="OutsideWindow"
+          [width]="180"
+        ></kendo-grid-column>
+        <ng-template kendoGridDetailTemplate let-dataItem>
+          <div class="thirdlevel-block">
+            <kendo-grid [data]="dataItem.thirdLevelData" class="thirdleveldata">
+              <kendo-grid-column
+                field="ArrowPN"
+                [width]="120"
+              ></kendo-grid-column>
+              <kendo-grid-column
+                field="SupplierPN"
+                [width]="120"
+              ></kendo-grid-column>
+              <kendo-grid-column
+                field="Logistic"
+                [width]="90"
+              ></kendo-grid-column>
+              <kendo-grid-column
+                field="Region"
+                [width]="100"
+              ></kendo-grid-column>
+              <kendo-grid-column
+                field="Supplier"
+                [width]="90"
+              ></kendo-grid-column>
+              <kendo-grid-column
+                field="Suppliers"
+                [width]="90"
+              ></kendo-grid-column>
+              <kendo-grid-column
+                field="SupplierPNs"
+                [width]="110"
+              ></kendo-grid-column>
+              <kendo-grid-column
+                field="inventory"
+                [width]="90"
+              ></kendo-grid-column>
+              <kendo-grid-column
+                field="Customer"
+                [width]="90"
+              ></kendo-grid-column>
+              <kendo-grid-column
+                field="Stdlead"
+                [width]="70"
+              ></kendo-grid-column>
+              <kendo-grid-column field="2204" [headerClass]="'smcaldate'"
+              title="Feb 01  2204" [width]="65"></kendo-grid-column>
+              <kendo-grid-column field="2205" [headerClass]="'smcaldate'"
+              title="Feb 09  2205" [width]="65"></kendo-grid-column>
+              <kendo-grid-column field="2206" [headerClass]="'smcaldate'"
+              title="Feb 22  2206" [width]="65"></kendo-grid-column>
+              <kendo-grid-column field="2207" [headerClass]="'smcaldate'"
+              title="Feb 22  2207" [width]="65"></kendo-grid-column>
+              <kendo-grid-column field="2208" [headerClass]="'smcaldate'"
+              title="Mar 02  2208" [width]="65"></kendo-grid-column>
+              <kendo-grid-column field="2209" [headerClass]="'smcaldate'"
+              title="Mar 12  2209" [width]="65"></kendo-grid-column>
+              <kendo-grid-column field="2210" [headerClass]="'smcaldate'"
+              title="Mar 22  2210" [width]="65"></kendo-grid-column>
+              <kendo-grid-column field="2211" [headerClass]="'smcaldate'"
+              title="Mar 20  2211" [width]="65"></kendo-grid-column>
+              <kendo-grid-column field="2212" [headerClass]="'smcaldate'"
+              title="Apr 02  2212" [width]="65"></kendo-grid-column>
+              <kendo-grid-column
+                field="Uncomfirmed"
+                [width]="115"
+              ></kendo-grid-column>
+              <kendo-grid-column
+                field="OutsideWindow"
+                [width]="125"
+              ></kendo-grid-column>
+            </kendo-grid>
+          </div>
+        </ng-template>
+      </kendo-grid>
+    </ng-template>
+  </kendo-grid>
+
+  <!-- </div> -->
+</div>

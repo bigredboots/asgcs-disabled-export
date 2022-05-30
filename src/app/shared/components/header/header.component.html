@@ -1,0 +1,207 @@
+<div class="settings" #overview>
+  <app-sidebar (onToggleSidebar)="toggleSidebar()"></app-sidebar>
+  <div class="overlayer" (click)="toggleOverlayer()"></div>
+</div>
+
+<div class="main-header">
+  <div id="dash-header">
+    <div class="top-navigation-block">
+      <div
+        role="button"
+        class="hamburger toggler"
+        singleDoubleClick
+        (onSingleClick)="handleSingleClicks()"
+      >
+        <span></span>
+      </div>
+      <div class="breadcrumb mobile-breadcrumb">
+        <div class="company-logo"></div>
+        <span>{{ this.myBreadCrumb }}</span>
+        <app-breadcrumb></app-breadcrumb>
+      </div>
+      <input type="checkbox" id="toggle-search" />
+      <div class="top-fields">
+        <nav
+          aria-label="breadcrumb"
+          role="navigation"
+          class="breadcrumb {{ this.myBreadCrumb }}"
+        >
+          <div class="company-logo"></div>
+          <span>{{ this.myBreadCrumb }}</span>
+          <app-breadcrumb></app-breadcrumb>
+        </nav>
+
+        <div class="dates-block" #datesblock>
+          <div class="date-selector">
+            <div class="selected-choice" (click)="toggledatechoice()">
+              <span class="initchoice">Last Fiscal Year to Present</span>
+              <span class="newchoice">New Selected Date</span>
+            </div>
+            <div class="select-options" (mouseleave)="closedatechoice()">
+              <div class="date-selectors" (click)="changedatechoice()">
+                +/- Week
+              </div>
+              <div class="date-selectors" (click)="changedatechoice()">
+                +/- Month
+              </div>
+              <div class="date-selectors" (click)="changedatechoice()">
+                +/- Quarter
+              </div>
+              <div class="date-selectors" (click)="changedatechoice()">
+                +/- Year
+              </div>
+              <div class="date-selectors custom" #customslide>
+                Custom Date
+                <a
+                  style="font-size: 10px; padding-left: 5px; color: #009ddc"
+                  href="https://jsfiddle.net/bigredboots/z1oxt7nf/"
+                  target="_blank"
+                  >See Functionality here
+                </a>
+                <div class="date-slider">
+                  <div class="sliderimg" (click)="sliderApply()"></div>
+                </div>
+                <div class="date-output">
+                  <div class="date-choice">
+                    <span>12/12/2021</span> to <span>04/19/2022</span>
+                  </div>
+                  <button
+                    class="slider-apply blue"
+                    (click)="changedatechoice()"
+                  >
+                    Apply
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="refresh-date">
+            <span class="title">UPDATED COPY (JAQ): </span>
+            <span>01 Jan 2022 | 21:00PM</span>
+          </div>
+        </div>
+
+        <div class="search-block">
+          <div class="mobile-search-header">
+            Search
+            <label for="toggle-search">+</label>
+          </div>
+          <input
+            type="text"
+            name="search"
+            autocomplete="off"
+            placeholder="Search for anything"
+            class="search-field"
+          />
+          <button class="search-submit blue">Search</button>
+        </div>
+        <div class="header-events">
+          <label for="toggle-search" class="icon site-search"
+            >Search Field</label
+          >
+          <div class="notifications">
+            <input type="checkbox" id="toggle-notifications" />
+            <label for="toggle-notifications" class="icon active"
+              >Notifications</label
+            >
+            <div class="notifications-popup">
+              <span class="notifications-title">Notifications</span>
+              <ul>
+                <li>You have no notifications at this time</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-header-events"></div>
+      <div class="user-block" (click)="toggleSidebar()">
+        <div class="avatar"></div>
+        <div class="name">LongFirstNameWithNoBreakingSpace V.</div>
+      </div>
+    </div>
+  </div>
+
+  <ng-container *ngIf="breadcrumbService.currentModule$ | async as module">
+    <div class="filter-block">
+      <div class="filters">
+        <span class="filter-title">Filters</span>
+        <!-- <span class="filter-close">+</span> -->
+      </div>
+      <div class="overview-filters">
+        <div class="filter-container">
+          <div class="block-filters">
+            <div class="main-filter-buttons">
+              <div class="filter-item">
+                <div class="filter-label">Example Filter Title 1</div>
+
+                <span #multiselectContainer class="k-dropdown-wrap active">
+                  <kendo-multiselect
+                    #multiselect
+                    kendoMultiSelectSummaryTag
+                    placeholder="(2) Selected"
+                  >
+                  </kendo-multiselect>
+                  <span class="k-select">
+                    <span class="k-icon k-i-arrow-s"></span>
+                  </span>
+                </span>
+              </div>
+              <div class="filter-item">
+                <div class="filter-label">Example Filter Name</div>
+                <span
+                  #multiselectContainer
+                  class="k-dropdown-wrap"
+                  [class.active]="value && value.length > 0"
+                >
+                  <kendo-multiselect
+                    #multiselect
+                    kendoMultiSelectSummaryTag
+                    placeholder="Select"
+                  >
+                  </kendo-multiselect>
+                  <span class="k-select">
+                    <span class="k-icon k-i-arrow-s"></span>
+                  </span>
+                </span>
+              </div>
+              <!-- <div class="filter-item">
+                <div class="filter-label">Sample Titletag 3</div>
+                <span #multiselectContainer class="k-dropdown-wrap">
+                  <kendo-multiselect
+                    #multiselect
+                    kendoMultiSelectSummaryTag
+                    placeholder="Select"
+                  >
+                  </kendo-multiselect>
+                  <span class="k-select">
+                    <span class="k-icon k-i-arrow-s"></span>
+                  </span>
+                </span>
+              </div> -->
+              <div class="filter-item search-component">
+              <div class="filter-label">Search</div>
+                <input
+                  type="text"
+                  class="search-filter"
+                  placeholder="+3 Characters"
+                />
+                <button class="submit">Submit</button>
+              </div>
+              <div class="filter-item">
+                <div class="expand-filters" (click)="toggleExpandedFilters()">
+                  <span class="filterblock">All Filters</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="block-filterbuttons">
+            <button kendobutton="" class="secondary">Reset</button>
+            <button kendobutton="" class="blue">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
