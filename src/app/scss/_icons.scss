@@ -95,13 +95,13 @@
 
 .excelbutton span {
   background-image: url(/assets/icons/excel.svg);
-  width: 12px;
-  height: 12px;
-  display: inline-block;
-  background-repeat: no-repeat;
-  margin-right: 2px;
 }
-
+.error .excelbutton span {
+  background-image: url(/assets/icons/error.svg);
+  filter: invert(59%) sepia(96%) saturate(1052%) hue-rotate(336deg)
+    brightness(99%) contrast(95%);
+  display: inline-block;
+}
 .sliderimg {
   background-image: url('https://cdn.jsdelivr.net/gh/bigredboots/asgcs-sprint-14@master/src/assets/images/sliders.png');
   width: 100%;
@@ -109,5 +109,4 @@
   content: '';
   background-size: contain;
   background-repeat: no-repeat;
-  
 }

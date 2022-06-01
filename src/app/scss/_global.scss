@@ -30,11 +30,5 @@ button {
       border-width: 1px;
     }
   }
-  &.error {
-    border-width: 1px;
-    background: $grey-darker;
-    color: $grey-lighter;
-    pointer-events: none;
-    height: 24px;
-  }
 }
+

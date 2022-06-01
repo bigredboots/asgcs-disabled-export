@@ -121,7 +121,7 @@
           </div>
         </div>
 
-        <div class="card-title-buttons">
+        <div class="card-title-buttons error">
           <div
             class="opened full-screen k-button"
             (click)="openFullscreen($event)"
@@ -164,11 +164,10 @@
               Processing</div
             >
           </button> -->
-          <button
-            class="error excelbutton"
-          >
+          <button class="excelbutton">
             <div class="error-copy"><span></span>Export to Excel</div>
           </button>
+          <div class="export-error-message">This is an example of a <strong>SHORT</strong? error message</div>
         </div>
       </div>
     </ng-template>
