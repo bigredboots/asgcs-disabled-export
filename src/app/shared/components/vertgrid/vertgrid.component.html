@@ -135,7 +135,7 @@
             <span></span>Exit Full Screen
           </div>
           <kendo-grid-column-chooser></kendo-grid-column-chooser>
-          <button
+          <!-- <button
             (click)="openModal($event)"
             [class.disabled]="isDisabled == true"
             class="blue excelbutton"
@@ -163,6 +163,11 @@
               </div>
               Processing</div
             >
+          </button> -->
+          <button
+            class="error excelbutton"
+          >
+            <div class="error-copy"><span></span>Export to Excel</div>
           </button>
         </div>
       </div>

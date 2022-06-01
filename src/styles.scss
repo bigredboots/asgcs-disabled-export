@@ -760,6 +760,7 @@ h4 {
     &:hover {
       border-width: 1px;
     }
+    
   }
 }
 .card-title-buttons {
@@ -769,6 +770,7 @@ h4 {
 .k-button.full-screen {
   display: inline-flex;
   border: 1px;
+  height: 24px;
 }
 .k-button.full-screen.closed {
   display: none;
